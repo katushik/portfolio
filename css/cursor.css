@@ -1,0 +1,48 @@
+.follow-cursor{
+    background-color: var(--cursor-color);
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transform: translateY(-50%) translateX(-50%); /* центрируем кружок */
+    position: absolute; /* задаём абсолютное позиционирование, чтобы элемент не влиял на остальные элементы и его можно было бы позиционировать следом за курсором */
+    z-index: 99; /* чтобы элемент был над остальными элементами */
+    pointer-events: none; /* чтобы сквозь элемент можно было взаимодействовать с элементами, находящимися под ним */
+    transition: width 0.64s, height 0.64s, border-radius 0.64s, opacity 0.3s;
+}
+
+*:active .follow-cursor{
+    width: 12px;
+    height: 12px;
+}
+
+*:active .follow-cursor.follow-cursor_text{
+    width: 2px;
+    height: 36px;
+    border-radius: 10%;
+}
+
+.follow-cursor_text{
+    width: 3px;
+    height: 24px;
+    border-radius: 10%;
+}
+
+.follow-cursor_range{
+    width: 24px;
+    height: 6px;
+    border-radius: 20px;
+}
+
+*:active .follow-cursor_range{
+    width: 36px;
+    height: 3px;
+}
+
+.follow-cursor_active{
+    width: 48px;
+    height: 48px;
+    opacity: .3;
+    transition: 0.1s;
+    background: radial-gradient(circle, rgba(237,241,244,1) 0%, rgba(255,255,255,0) 75%);
+}
