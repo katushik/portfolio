@@ -37,7 +37,7 @@ let getRandomInt = (max)=> {
 
 photos.forEach(photo => {
     let img = document.createElement('img')
-    img.src = `/img/photos/${photo}.jpg`
+    img.src = `img/photos/${photo}.jpg`
     img.classList.add('photo')
     setTimeout(()=>{
         img.style.cssText = `top: ${getRandomInt(70)}%; left: ${getRandomInt(70)}%; transform: scale(${getRandomInt(50) + 50}%) rotate(${getRandomInt(2) ? getRandomInt(10) : -getRandomInt(10)}deg);`
